@@ -855,9 +855,9 @@ var Chonmage;
         CompiledTemplate.templateForBrowser = new Chonmage.Compiled(function (context) {
             var _ = this, __b = "";
             context.references.forEach(function (__item_0) {
-                __b += "/// <reference path=\"";
+                __b += "///<reference path=\"";
                 __b += _.esc(__item_0);
-                __b += "\" />";
+                __b += "\"/>";
                 __b += "\n";
             });
             __b += "\n";
@@ -867,7 +867,7 @@ var Chonmage;
             __b += "\n";
             __b += "        get(name: \"";
             __b += _.esc(context.templateKey);
-            __b += "\" ): MustacheTS.Template<";
+            __b += "\"): Chonmage.Compiled<";
             __b += _.esc(context.contextType);
             __b += ">;";
             __b += "\n";
