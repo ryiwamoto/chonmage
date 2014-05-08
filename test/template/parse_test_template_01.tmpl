@@ -1,0 +1,6 @@
+{{!reference="foo/bar/a.ts"}}
+{{! reference="../foo/bar/b.ts"}}
+{{!reference="../foo/bar/c.ts" }}
+{{!context:IContextType}}
+string
+{{#section}}{{escapedVariable}}{{^invertedSection}}{{{unescapedVariable}}}{{/invertedSection}}{{/section}}

@@ -1,0 +1,1 @@
+tsc ./test/unifiedTest.ts --out tmp/unifiedTest.js && cat ./lib/typescriptService.js ./tmp/unifiedTest.js > ./test/unifiedTest.js && mocha --reporter list ./test/unifiedTest.js

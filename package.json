@@ -1,0 +1,31 @@
+{
+  "name": "chonmage.ts",
+  "version": "0.0.1",
+  "description": "Minimal Templating in TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "./scripts/test.sh",
+    "dest": "./scripts/dest.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ryiwamoto/chonmage.git"
+  },
+  "author": "ryiwamoto <konnpekigan@gmail.com>",
+  "license": "Apache License, Version 2.0",
+  "bugs": {
+    "url": "https://github.com/ryiwamoto/chonmage.ts/issues"
+  },
+  "homepage": "https://github.com/ryiwamoto/chonmage",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "hogan.js": "^2.0.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "~1.9.1",
+    "hogan.js": "~2.0.0"
+  }
+}
