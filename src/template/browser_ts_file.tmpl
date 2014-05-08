@@ -5,8 +5,8 @@
 
 module Chonmage{
     interface ITemplateStore {
-        get(name: "{{templateKey}}"): Chonmage.Compiled<{{contextType}}>;
+        get(name: "{{{templateKey}}}"): Chonmage.Compiled<{{{contextType}}}>;
     }
 }
 
-(<any>window)["ChonmageTemplates"]["tempaltes"]["{{templateKey}}"] = {{compiled}};
+(<any>window)["ChonmageTemplates"]["tempaltes"]["{{{templateKey}}}"] = {{{compiled}}};
