@@ -1,5 +1,5 @@
 {
-  "name": "chonmage.ts",
+  "name": "chonmage",
   "version": "0.0.1",
   "description": "Minimal Templating in TypeScript",
   "main": "dest/ChonmageCompiler.js",
