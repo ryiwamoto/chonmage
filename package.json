@@ -2,7 +2,7 @@
   "name": "chonmage.ts",
   "version": "0.0.1",
   "description": "Minimal Templating in TypeScript",
-  "main": "index.js",
+  "main": "dest/ChonmageCompiler.js",
   "scripts": {
     "test": "./scripts/test.sh",
     "dest": "./scripts/dest.sh"
