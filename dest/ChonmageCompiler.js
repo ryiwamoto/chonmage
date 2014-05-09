@@ -74,7 +74,7 @@ var Chonmage;
             };
 
             ProgramStatementToStringVisitor.prototype.createInit = function (contextType, code) {
-                return 'new Chonmage.Compiled<' + contextType + '>(function(context){var _ = this, __b = "";' + code + '; return __b;})';
+                return 'new Chonmage.Compiled<' + contextType + '>(function(context: ' + contextType + '){var _ = this, __b = "";' + code + '; return __b;})';
             };
 
             ProgramStatementToStringVisitor.prototype.getPrecompiledSymbol = function (statement) {

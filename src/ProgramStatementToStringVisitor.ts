@@ -22,7 +22,7 @@ module Chonmage.Generator {
         }
 
         private createInit(contextType:string, code:string):string {
-            return 'new Chonmage.Compiled<' + contextType + '>(function(context){var _ = this, __b = "";' + code + '; return __b;})';
+            return 'new Chonmage.Compiled<' + contextType + '>(function(context: ' + contextType + '){var _ = this, __b = "";' + code + '; return __b;})';
         }
 
         private getPrecompiledSymbol(statement:ISymbolStatement):string {

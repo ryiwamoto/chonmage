@@ -30,7 +30,7 @@ describe('ProgramStatementToStringVisitor', function () {
         var visitor = new Generator.ProgramStatementToStringVisitor();
         var precompiled:string = visitor.visitProgramStatementTree(fixture);
 
-        var expected:string = 'new Chonmage.Compiled<ITemplateNodeToProgramContext>(function(context){var _ = this, __b = "";__b += "string";__b += "\n";context.section.forEach(function(__item_0){__b += _.esc(__item_0.itemStr);__b += _.esc(context.escapedVariable);if(!context.invertedSection){__b += context.unescapedVariable}});__b += "\n"; return __b;})';
+        var expected:string = 'new Chonmage.Compiled<ITemplateNodeToProgramContext>(function(context: ITemplateNodeToProgramContext){var _ = this, __b = "";__b += "string";__b += "\n";context.section.forEach(function(__item_0){__b += _.esc(__item_0.itemStr);__b += _.esc(context.escapedVariable);if(!context.invertedSection){__b += context.unescapedVariable}});__b += "\n"; return __b;})';
         expect(precompiled).to.eq(expected);
     });
 
