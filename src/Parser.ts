@@ -14,7 +14,7 @@ module Chonmage.Template {
     }
 
     export class Parser {
-        static referencePattern = /\s*reference="([^"]+)"\s*/;
+        static referencePattern = /\s*reference\s*path="([^"]+)"\s*/;
         static contextTypePattern = /\s*context:\s*([\w.]+)\s*/;
 
         private contextType:string;

@@ -1,12 +1,12 @@
-{{!reference="../../dest/ChonmageCompiler.d.ts"}}{{!context:Chonmage.IDestTemplate}}
+{{!reference path="../../dest/ChonmageCompiler.d.ts"}}{{!context:Chonmage.IDestTemplate}}
 {{#references}}
 ///<reference path="{{.}}"/>
 {{/references}}
 
 module Chonmage{
-    interface ITemplateStore {
+    export interface ITemplateStore {
         get(name: "{{{templateKey}}}"): Chonmage.Compiled<{{{contextType}}}>;
     }
 }
 
-(<any>window)["ChonmageTemplates"]["tempaltes"]["{{{templateKey}}}"] = {{{compiled}}};
+(<any>window)["ChonmageTemplates"]["templates"]["{{{templateKey}}}"] = {{{compiled}}};

@@ -1,6 +1,6 @@
-{{!reference="foo/bar/a.ts"}}
-{{! reference="../foo/bar/b.ts"}}
-{{!reference="../foo/bar/c.ts" }}
+{{!reference path="foo/bar/a.ts"}}
+{{! reference  path="../foo/bar/b.ts"}}
+{{!reference path="../foo/bar/c.ts" }}
 {{!context:IContextType}}
 string
 {{#section}}{{escapedVariable}}{{^invertedSection}}{{{unescapedVariable}}}{{/invertedSection}}{{/section}}

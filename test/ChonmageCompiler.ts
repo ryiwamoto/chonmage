@@ -6,10 +6,11 @@ describe('Chonmage.Compiler', function () {
     it('.createTsFileForBrowser', function () {
         var templatePath = __dirname + '/template';
         var templateFilePath = templatePath + '/create_ts_file_test.tmpl';
-        var templateContext = fs.readFileSync(templateFilePath, {encoding: 'utf8'});
+        var templateContent = fs.readFileSync(templateFilePath, {encoding: 'utf8'});
+
         expect(function () {
             Chonmage.createTsFileForBrowser(
-                Chonmage.compile(templateContext, templatePath),
+                Chonmage.compile(templateContent, templatePath),
                 'testTemplate'
             )
         }).not.to.throw();
