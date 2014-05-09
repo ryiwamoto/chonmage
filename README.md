@@ -43,7 +43,7 @@ module Chonmage {
 }
  
 (<any>window)["ChonmageTemplates"]["templates"]["chonmage_template_sample.mustache"] =
-    new Chonmage.Compiled<IContext>(function(context) {
+    new Chonmage.Compiled<IContext>(function(context: IContext) {
         var _ = this, __b = "";
         __b += (+context.numberVar);
         __b += "\n";
