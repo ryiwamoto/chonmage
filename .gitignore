@@ -88,3 +88,37 @@ node_modules
 test/unifiedTest.js
 
 tmp
+### https://raw.github.com/github/gitignore/master/Global/Eclipse.gitignore
+
+*.pydevproject
+.metadata
+.gradle
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+# sbteclipse plugin 
+.target
+
+# TeXlipse plugin
+.texlipse
+
+.project
