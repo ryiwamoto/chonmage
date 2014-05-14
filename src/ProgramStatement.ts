@@ -76,6 +76,10 @@ module Chonmage.Generator {
         constructor(public symbol:string, public container:IContainerStatement, private arrayUUID:number) {
         }
 
+        public getLoopUUID(): number{
+            return this.arrayUUID;
+        }
+
         public getContainerName():string {
             return '__item_' + this.arrayUUID + '';
         }

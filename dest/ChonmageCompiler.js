@@ -95,12 +95,28 @@ var Chonmage;
 
             ProgramStatementToStringVisitor.prototype.visitArrayLoopStatement = function (statement) {
                 var self = this;
-                var buffer = '';
-                buffer += this.getPrecompiledSymbol(statement) + '.forEach(function(' + statement.getContainerName() + '){';
+                var varName = this.getPrecompiledSymbol(statement);
+
+                //for expression
+                var loopCountName = '_i_' + statement.getLoopUUID();
+                var loopLengthName = '_len_' + statement.getLoopUUID();
+
+                //var _i_0 = 0; _len0 = array.length;
+                var initialization = loopCountName + ' = 0, ' + loopLengthName + ' = ' + this.getPrecompiledSymbol(statement) + '.length';
+
+                //_i_0 < _len;
+                var condition = loopCountName + ' < ' + loopLengthName;
+
+                //_i_0++
+                var finalExpression = loopCountName + '++';
+
+                var buffer = 'var ' + loopCountName + ', ' + loopLengthName + ';';
+                buffer += 'for(' + initialization + '; ' + condition + '; ' + finalExpression + '){';
+                buffer += 'var ' + statement.getContainerName() + ' = ' + varName + '[' + loopCountName + '];'; //var item_0 = array[_i_0]
                 buffer += statement.children.map(function (child) {
                     return child.accept(self);
                 }).join(';');
-                buffer += '})';
+                buffer += '}';
                 return buffer;
             };
 
@@ -209,6 +225,10 @@ var Chonmage;
                 this.container = container;
                 this.arrayUUID = arrayUUID;
             }
+            ArrayLoopStatement.prototype.getLoopUUID = function () {
+                return this.arrayUUID;
+            };
+
             ArrayLoopStatement.prototype.getContainerName = function () {
                 return '__item_' + this.arrayUUID + '';
             };
@@ -854,12 +874,15 @@ var Chonmage;
     (function (CompiledTemplate) {
         CompiledTemplate.templateForBrowser = new Chonmage.Compiled(function (context) {
             var _ = this, __b = "";
-            context.references.forEach(function (__item_0) {
+            var _i_0, _len_0;
+            for (_i_0 = 0, _len_0 = context.references.length; _i_0 < _len_0; _i_0++) {
+                var __item_0 = context.references[_i_0];
                 __b += "///<reference path=\"";
                 __b += _.esc(__item_0);
                 __b += "\"/>";
                 __b += "\n";
-            });
+            }
+            ;
             __b += "\n";
             __b += "module Chonmage{";
             __b += "\n";

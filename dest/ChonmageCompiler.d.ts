@@ -82,6 +82,7 @@ declare module Chonmage.Generator {
         static counter: number;
         public children: IProgramStatement[];
         constructor(symbol: string, container: IContainerStatement, arrayUUID: number);
+        public getLoopUUID(): number;
         public getContainerName(): string;
         public toJSON(): any;
         public accept(visitor: IProgramStatementToStringVisitor): string;
